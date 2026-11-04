@@ -56,10 +56,7 @@ Alternative: in VS Code, install the "Live Server" extension, right-click `index
 
 ### Step 1. Create the repository
 
-1. Sign in to GitHub and click **New repository**.
-2. Name it exactly `Sidusanka.github.io`, using your own GitHub username. This special name makes the site available at `https://sidusanka.github.io`.
-3. Set it to **Public** (free GitHub accounts need this for Pages).
-4. Leave "Add a README" unchecked, then click **Create repository**.
+1. Use your existing public repository: `Sidusanka/portfolio`.
 
 ### Step 2. Upload the files
 
@@ -78,7 +75,7 @@ Run these inside the `portfolio-site` folder:
 git init -b main
 git add .
 git commit -m "Add portfolio site"
-git remote add origin https://github.com/Sidusanka/Sidusanka.github.io.git
+git remote add origin git@github.com:Sidusanka/portfolio.git
 git push -u origin main
 ```
 
@@ -89,7 +86,7 @@ When Git asks for a password, use a personal access token or sign in through Git
 1. In the repository, open **Settings**, then **Pages** in the left menu.
 2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
 3. Set **Branch** to `main` and the folder to `/ (root)`, then click **Save**.
-4. Wait one to two minutes. Open the **Actions** tab to watch the "pages build and deployment" run. When it shows a green tick, visit `https://sidusanka.github.io`.
+4. Wait one to two minutes. Open the **Actions** tab to watch the "pages build and deployment" run. When it shows a green tick, visit `https://sidusanka.github.io/portfolio/`.
 
 ### Step 4. Update the site later
 
@@ -125,7 +122,7 @@ Do these in order. Adding the domain in GitHub first protects you from someone e
 | A Record | `@` | `185.199.109.153` |
 | A Record | `@` | `185.199.110.153` |
 | A Record | `@` | `185.199.111.153` |
-| CNAME Record | `www` | `Sidusanka.github.io.` |
+| CNAME Record | `www` | `YOUR-DOMAIN.com.` |
 
 Optional IPv6 (add as `AAAA Record`, host `@`): `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.
 
