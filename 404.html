@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Sindusanka Gamage</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <!-- Absolute paths (starting with /) are used here because this page can be shown at any address.
+       They work for username.github.io and for your own domain. -->
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <main class="container not-found">
+    <h1 class="not-found__title">Page not found</h1>
+    <p class="not-found__text">The page you opened doesn't exist or has moved. Check the address, or go back to the home page.</p>
+    <a class="btn btn--primary" href="/">Go to home page</a>
+  </main>
+</body>
+</html>
