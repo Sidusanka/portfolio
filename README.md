@@ -100,7 +100,7 @@ git push
 
 Changes go live in about a minute.
 
-## 4. Use your Namecheap domain (when you buy it)
+## 4. Use your domain (when you buy it)
 
 Do these in order. Adding the domain in GitHub first protects you from someone else claiming it.
 
@@ -110,7 +110,7 @@ Do these in order. Adding the domain in GitHub first protects you from someone e
 2. Under **Custom domain**, type your domain, for example `your-domain.com`, and click **Save**. GitHub adds a file named `CNAME` to the repository. If you use Git, run `git pull` afterwards so you do not overwrite it.
 3. Recommended: verify the domain. Open your profile **Settings**, then **Pages**, click **Add a domain** and follow the TXT record steps. This stops others from using your domain on their GitHub sites.
 
-### In Namecheap
+### In Namecheap or Godaddy,
 
 1. Go to **Domain List**, click **Manage** next to your domain, then open the **Advanced DNS** tab.
 2. Delete the default records Namecheap created: the `CNAME` for `www` pointing to `parkingpage.namecheap.com` and the `URL Redirect` record for `@`.
