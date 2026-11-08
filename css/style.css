@@ -6,8 +6,8 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-code: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
@@ -61,7 +61,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 85% 4%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 28rem),
+    var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 1.0625rem;
@@ -74,7 +76,7 @@ h1, h2, h3 {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.045em;
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -127,18 +129,18 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   justify-content: center;
   padding: 0.85rem 1.4rem;
   border: 1.5px solid transparent;
-  border-radius: 10px;
+  border-radius: 999px;
   font-family: var(--font-body);
   font-size: 0.975rem;
   font-weight: 600;
   line-height: 1;
   text-decoration: none;
-  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.15s, border-color 0.15s, color 0.15s;
 }
 .btn--primary { background: var(--accent); color: var(--accent-ink); }
-.btn--primary:hover { background: var(--accent-hover); }
+.btn--primary:hover { background: var(--accent-hover); box-shadow: 0 12px 24px -14px var(--accent); transform: translateY(-2px); }
 .btn--ghost { border-color: var(--line-strong); color: var(--ink); }
-.btn--ghost:hover { border-color: var(--ink); }
+.btn--ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
 
 /* ---------- Header ---------- */
 .site-header {
@@ -148,7 +150,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
 }
 
 .site-header__bar {
@@ -166,7 +168,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .brand {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   text-decoration: none;
@@ -218,7 +220,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Hero ---------- */
 .hero {
-  padding-block: clamp(3.5rem, 9vw, 7rem) clamp(3.5rem, 8vw, 6rem);
+  padding-block: clamp(4.5rem, 11vw, 8.5rem) clamp(4rem, 8vw, 6rem);
 }
 
 .hero__grid {
@@ -230,7 +232,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .hero__title {
   font-size: clamp(2.5rem, 5.4vw, 4.4rem);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.055em;
   line-height: 1.03;
 }
 
@@ -239,7 +241,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   margin: 1.75rem 0 2.25rem;
   color: var(--muted);
   font-size: clamp(1.1rem, 1.6vw, 1.3rem);
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
@@ -247,14 +249,16 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* Manifest panel. The one animated moment on the page:
    every line starts "pending" (amber) and turns "synced" (green) in order. */
 .manifest {
-  --end: calc(var(--n) * 110ms + 700ms);
+  --sync-step: 220ms;
+  --sync-start: 900ms;
+  --end: calc(var(--n) * var(--sync-step) + var(--sync-start));
   margin: 0;
   overflow: hidden;
   background: var(--panel-bg);
   color: var(--panel-ink);
   border: 1px solid var(--panel-line);
-  border-radius: 16px;
-  box-shadow: 0 28px 50px -28px rgba(20, 33, 58, 0.55);
+  border-radius: 20px;
+  box-shadow: 0 32px 60px -28px rgba(20, 33, 58, 0.65);
 }
 
 .manifest__bar {
@@ -282,8 +286,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   grid-template-columns: 2.25rem 1fr;
   align-items: baseline;
   padding-right: 1rem;
-  animation: line-in 0.35s ease-out both;
-  animation-delay: calc(var(--i) * 110ms + 600ms);
+  animation: line-in 0.5s ease-out both;
+  animation-delay: calc(var(--i) * var(--sync-step) + var(--sync-start));
 }
 
 .ln__dot {
@@ -293,8 +297,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   height: 0.5rem;
   border-radius: 50%;
   background: var(--synced);
-  animation: dot-sync 0.45s ease-out both;
-  animation-delay: calc(var(--i) * 110ms + 600ms);
+  animation: dot-sync 0.6s ease-out both;
+  animation-delay: calc(var(--i) * var(--sync-step) + var(--sync-start));
 }
 
 .ln__text { white-space: pre; }
@@ -359,7 +363,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ---------- Sections ---------- */
 .section {
   padding-block: clamp(4rem, 9vw, 7rem);
-  border-top: 1px solid var(--line);
+  border-top: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
 }
 
 .section__grid {
@@ -440,11 +444,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
   gap: 0.75rem 2.5rem;
-  padding: 2rem 0.75rem;
+  padding: 2rem 1rem;
+  border-radius: 14px;
   border-bottom: 1px solid var(--line);
   transition: background-color 0.2s;
 }
-.ledger__row:hover { background: var(--surface); }
+.ledger__row:hover { background: var(--surface); box-shadow: 0 16px 30px -26px var(--ink); }
 
 .ledger__title { font-size: clamp(1.35rem, 2.2vw, 1.75rem); }
 .ledger__tags { margin-top: 0.5rem; color: var(--muted); font-size: 0.95rem; }
@@ -462,7 +467,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   gap: 0.5rem 1.25rem;
   align-items: baseline;
   padding: 1.1rem 1.4rem;
-  border-radius: 12px;
+  border-radius: 14px;
   background: color-mix(in srgb, var(--accent) calc(var(--depth) * 5% + 4%), var(--surface));
 }
 
