@@ -7,8 +7,7 @@
   <path d="M0 0h640v360H0z" fill="#f2e9d9"/>
   <path d="M0 0h640v360H0z" fill="url(#grid)" opacity=".65"/>
   <g fill="#765a31" font-family="monospace" font-size="15" letter-spacing="2">
-    <text x="48" y="56">AZURE RESOURCE LIFECYCLE</text><text x="592" y="56" text-anchor="end">FIG. 03</text>
-    <text x="48" y="314">CONCEPTUAL DIAGRAM</text>
+    <text x="48" y="56">AZURE RESOURCE LIFECYCLE</text>
   </g>
   <g fill="none" stroke="#9b6e34" stroke-width="2.5">
     <path d="M262 178h54m0 0v-57h60m-60 57v57h60"/>

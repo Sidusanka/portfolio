@@ -15,8 +15,6 @@
   <path d="M24 53V24h29m534 0h29v29m0 254v29h-29m-534 0H24v-29" stroke="#7494c2" fill="none" stroke-width="2"/>
   <g font-family="monospace" fill="#3b5578" font-size="15" letter-spacing="2">
     <text x="52" y="66">AZURE KUBERNETES SERVICE</text>
-    <text x="588" y="66" text-anchor="end">FIG. 01</text>
-    <text x="52" y="314">CONCEPTUAL SEQUENCE</text>
   </g>
   <g fill="none" stroke="#42659d" stroke-width="2" marker-end="url(#arrow)">
     <path d="M207 169h35"/><path d="M394 169h35"/>

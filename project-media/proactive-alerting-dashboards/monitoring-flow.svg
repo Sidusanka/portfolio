@@ -7,8 +7,7 @@
   <path d="M0 0h640v360H0z" fill="#e2efec"/>
   <path d="M0 0h640v360H0z" fill="url(#grid)" opacity=".72"/>
   <g fill="#315c5b" font-family="monospace" font-size="15" letter-spacing="2">
-    <text x="48" y="56">MONITORING FLOW</text><text x="592" y="56" text-anchor="end">FIG. 02</text>
-    <text x="48" y="314">CONCEPTUAL DIAGRAM</text>
+    <text x="48" y="56">MONITORING FLOW</text>
   </g>
   <g fill="none" stroke="#488784" stroke-width="2.5">
     <path d="M198 177h47m151 0h28m0 0v-57h26m-26 57v57h26"/>
