@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.3" fill="#97bcbb"/>
+    </pattern>
+  </defs>
+  <path d="M0 0h640v360H0z" fill="#e2efec"/>
+  <path d="M0 0h640v360H0z" fill="url(#grid)" opacity=".72"/>
+  <g fill="#315c5b" font-family="monospace" font-size="15" letter-spacing="2">
+    <text x="48" y="56">MONITORING FLOW</text><text x="592" y="56" text-anchor="end">FIG. 02</text>
+    <text x="48" y="314">CONCEPTUAL DIAGRAM</text>
+  </g>
+  <g fill="none" stroke="#488784" stroke-width="2.5">
+    <path d="M198 177h47m151 0h28m0 0v-57h26m-26 57v57h26"/>
+    <circle cx="424" cy="177" r="4" fill="#488784"/>
+  </g>
+  <g stroke="#699995" stroke-width="1.5">
+    <rect x="48" y="131" width="150" height="92" rx="10" fill="#f6fcfa"/>
+    <rect x="245" y="131" width="151" height="92" rx="10" fill="#215d5a" stroke="#215d5a"/>
+    <rect x="450" y="81" width="142" height="78" rx="10" fill="#f6fcfa"/>
+    <rect x="450" y="195" width="142" height="78" rx="10" fill="#f6fcfa"/>
+  </g>
+  <g fill="none" stroke="#27716d" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M114 154h19v18h-19zm4 5h11m-11 6h7"/>
+    <path d="M517 109v-5a5 5 0 0 1 10 0v5l3 5h-16zm3 9h4"/>
+    <path d="m508 227 8-8 7 5 11-10"/>
+  </g>
+  <path d="m305 165 6-5 5 8 7-15 5 10h9" fill="none" stroke="#b8e4d9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#204b49" font-family="monospace" font-size="17" text-anchor="middle">
+    <text x="123" y="195">Grafana Alloy</text>
+    <text x="320" y="195" fill="#fff">Prometheus</text>
+    <text x="521" y="140">Alerts</text><text x="521" y="251">Dashboards</text>
+  </g>
+</svg>

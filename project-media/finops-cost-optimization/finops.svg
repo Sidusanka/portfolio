@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
+      <path d="M13 10v6m-3-3h6" stroke="#d2bc97" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+  <path d="M0 0h640v360H0z" fill="#f2e9d9"/>
+  <path d="M0 0h640v360H0z" fill="url(#grid)" opacity=".65"/>
+  <g fill="#765a31" font-family="monospace" font-size="15" letter-spacing="2">
+    <text x="48" y="56">AZURE RESOURCE LIFECYCLE</text><text x="592" y="56" text-anchor="end">FIG. 03</text>
+    <text x="48" y="314">CONCEPTUAL DIAGRAM</text>
+  </g>
+  <g fill="none" stroke="#9b6e34" stroke-width="2.5">
+    <path d="M262 178h54m0 0v-57h60m-60 57v57h60"/>
+    <circle cx="316" cy="178" r="4" fill="#9b6e34"/>
+  </g>
+  <g stroke="#ae8b58" stroke-width="1.5">
+    <rect x="48" y="130" width="214" height="96" rx="10" fill="#6a4b27" stroke="#6a4b27"/>
+    <rect x="376" y="80" width="216" height="82" rx="10" fill="#fdf9f1"/>
+    <rect x="376" y="194" width="216" height="82" rx="10" fill="#fdf9f1"/>
+  </g>
+  <g fill="#69491f" font-family="monospace">
+    <text x="155" y="167" text-anchor="middle" font-size="14" fill="#ebd0a9" letter-spacing="2">FINOPS</text>
+    <text x="155" y="195" text-anchor="middle" font-size="20" fill="#fff">Resource review</text>
+    <text x="407" y="117" font-size="20" font-weight="bold">Migrate</text>
+    <text x="407" y="143" font-size="16">Legacy VM SKUs</text>
+    <text x="407" y="231" font-size="20" font-weight="bold">Retire</text>
+    <text x="407" y="257" font-size="16">Unused resources</text>
+  </g>
+  <g fill="none" stroke="#9b6e34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M541 110h22m-8-8 8 8-8 8"/>
+    <path d="M545 224h15l-1 13h-13zm-3 0h21m-15 0v-4h9v4"/>
+  </g>
+</svg>

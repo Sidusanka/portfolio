@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0v24" fill="none" stroke="#cbd8ed" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="light" cx="75%" cy="30%" r="85%">
+      <stop stop-color="#f2f7ff"/><stop offset="1" stop-color="#dbe7f8"/>
+    </radialGradient>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="m1 1 4 2-4 2" fill="none" stroke="#42659d" stroke-width="1.25"/>
+    </marker>
+  </defs>
+  <path fill="url(#light)" d="M0 0h640v360H0z"/>
+  <path fill="url(#grid)" opacity=".7" d="M0 0h640v360H0z"/>
+  <path d="M24 53V24h29m534 0h29v29m0 254v29h-29m-534 0H24v-29" stroke="#7494c2" fill="none" stroke-width="2"/>
+  <g font-family="monospace" fill="#3b5578" font-size="15" letter-spacing="2">
+    <text x="52" y="66">AZURE KUBERNETES SERVICE</text>
+    <text x="588" y="66" text-anchor="end">FIG. 01</text>
+    <text x="52" y="314">CONCEPTUAL SEQUENCE</text>
+  </g>
+  <g fill="none" stroke="#42659d" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M207 169h35"/><path d="M394 169h35"/>
+  </g>
+  <g stroke-width="1.5">
+    <rect x="52" y="116" width="150" height="106" rx="10" fill="#f6faff" stroke="#809bc0"/>
+    <rect x="245" y="116" width="144" height="106" rx="10" fill="#f6faff" stroke="#809bc0"/>
+    <rect x="432" y="116" width="156" height="106" rx="10" fill="#1f4387" stroke="#1f4387"/>
+  </g>
+  <g font-family="monospace" text-anchor="middle">
+    <g font-size="14" letter-spacing="1.5">
+      <text x="127" y="153" fill="#4f6690">STEP 01</text>
+      <text x="317" y="153" fill="#4f6690">STEP 02</text>
+      <text x="510" y="153" fill="#c3d9ff">STEP 03</text>
+    </g>
+    <g font-size="33" font-weight="bold">
+      <text x="127" y="190" fill="#254575">1.33</text>
+      <text x="317" y="190" fill="#254575">1.34</text>
+      <text x="510" y="190" fill="#fff">1.35</text>
+    </g>
+    <path d="M52 270h125m286 0h125" stroke="#7494c2" stroke-dasharray="5 6"/>
+    <rect x="187" y="247" width="266" height="46" rx="23" fill="#edf4ff" stroke="#809bc0"/>
+    <path d="M209 270h12m-6-6v12" stroke="#42659d" stroke-width="2"/>
+    <text x="334" y="276" font-size="16" fill="#254575">Flux CD migrations</text>
+  </g>
+</svg>
