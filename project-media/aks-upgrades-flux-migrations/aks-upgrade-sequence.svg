@@ -27,9 +27,9 @@
   </g>
   <g font-family="monospace" text-anchor="middle">
     <g font-size="14" letter-spacing="1.5">
-      <text x="127" y="153" fill="#4f6690">STEP 01</text>
-      <text x="317" y="153" fill="#4f6690">STEP 02</text>
-      <text x="510" y="153" fill="#c3d9ff">STEP 03</text>
+      <text x="127" y="153" fill="#4f6690">Version</text>
+      <text x="317" y="153" fill="#4f6690">Version</text>
+      <text x="510" y="153" fill="#c3d9ff">Version</text>
     </g>
     <g font-size="33" font-weight="bold">
       <text x="127" y="190" fill="#254575">1.33</text>
