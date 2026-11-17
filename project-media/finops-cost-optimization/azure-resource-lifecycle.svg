@@ -1,33 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
-  <defs>
-    <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
-      <path d="M13 10v6m-3-3h6" stroke="#d2bc97" stroke-width="1.2"/>
-    </pattern>
-  </defs>
-  <path d="M0 0h640v360H0z" fill="#f2e9d9"/>
-  <path d="M0 0h640v360H0z" fill="url(#grid)" opacity=".65"/>
-  <g fill="#765a31" font-family="monospace" font-size="15" letter-spacing="2">
-    <text x="48" y="56">AZURE RESOURCE LIFECYCLE</text>
-  </g>
-  <g fill="none" stroke="#9b6e34" stroke-width="2.5">
-    <path d="M262 178h54m0 0v-57h60m-60 57v57h60"/>
-    <circle cx="316" cy="178" r="4" fill="#9b6e34"/>
-  </g>
-  <g stroke="#ae8b58" stroke-width="1.5">
-    <rect x="48" y="130" width="214" height="96" rx="10" fill="#6a4b27" stroke="#6a4b27"/>
-    <rect x="376" y="80" width="216" height="82" rx="10" fill="#fdf9f1"/>
-    <rect x="376" y="194" width="216" height="82" rx="10" fill="#fdf9f1"/>
-  </g>
-  <g fill="#69491f" font-family="monospace">
-    <text x="155" y="167" text-anchor="middle" font-size="14" fill="#ebd0a9" letter-spacing="2">FINOPS</text>
-    <text x="155" y="195" text-anchor="middle" font-size="20" fill="#fff">Resource review</text>
-    <text x="407" y="117" font-size="20" font-weight="bold">Migrate</text>
-    <text x="407" y="143" font-size="16">Legacy VM SKUs</text>
-    <text x="407" y="231" font-size="20" font-weight="bold">Retire</text>
-    <text x="407" y="257" font-size="16">Unused resources</text>
-  </g>
-  <g fill="none" stroke="#9b6e34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M541 110h22m-8-8 8 8-8 8"/>
-    <path d="M545 224h15l-1 13h-13zm-3 0h21m-15 0v-4h9v4"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="finops-cost-chart" width="640" height="385" viewBox="0 0 640 385" role="img" aria-label="Estimated monthly compute cost per AKS node in USD. Original Intel D16d_v5, $659.92, baseline. Smaller Intel D8d_v5, $329.96, 50.0% lower. Proposed AMD D8ads_v5, $300.76, 54.4% lower." data-period="monthly" data-standalone="true" data-animate="true">
+    <style>
+  .finops-cost-chart {
+    font-family: var(--body-font, system-ui, sans-serif);
+    font-variant-numeric: tabular-nums;
+    fill: #f0f5ff;
+  }
+  .finops-cost-chart[data-standalone] {
+    background: #152235;
+  }
+  .finops-cost-chart .cost-axis, .finops-cost-chart .cost-sku {
+    font-family: var(--mono, ui-monospace, monospace);
+  }
+  .finops-cost-chart .cost-axis { fill: #b7c8df; font-size: 20px; }
+  .finops-cost-chart .cost-sku { font-size: 25px; font-weight: 650; }
+  .finops-cost-chart .cost-config { font-size: 20px; }
+  .finops-cost-chart .cost-amount { font-size: 27px; font-weight: 700; }
+  .finops-cost-chart .annual-only, .finops-cost-chart[data-period="annual"] .monthly-only { display: none; }
+  .finops-cost-chart[data-period="annual"] .annual-only { display: inline; }
+  .finops-cost-chart .cost-scale {
+    transform: scaleY(var(--monthly-scale));
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    transition: transform .55s cubic-bezier(.2, .7, .25, 1);
+  }
+  .finops-cost-chart[data-period="annual"] .cost-scale { transform: scaleY(var(--annual-scale)); }
+  .finops-cost-chart .cost-offset {
+    transform: translateY(var(--monthly-offset));
+    transition: transform .55s cubic-bezier(.2, .7, .25, 1);
+  }
+  .finops-cost-chart[data-period="annual"] .cost-offset { transform: translateY(var(--annual-offset)); }
+  .finops-cost-chart .cost-face { transform-box: fill-box; transform-origin: center bottom; }
+  @media (prefers-reduced-motion: no-preference) {
+    .finops-cost-chart[data-animate] .cost-face {
+      animation: finops-bar-rise .78s cubic-bezier(.2, .7, .2, 1) var(--delay) both;
+    }
+    .finops-cost-chart[data-animate] .cost-amount {
+      animation: finops-cost-fade .35s ease-out calc(var(--delay) + 270ms) both;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .finops-cost-chart .cost-scale, .finops-cost-chart .cost-offset { transition: none; }
+  }
+  @keyframes finops-bar-rise { from { transform: scaleY(.02); opacity: .45; } }
+  @keyframes finops-cost-fade { from { opacity: 0; } }
+</style>
+    <text x="30" y="48" font-size="27" font-weight="700">Monthly cost per AKS node</text>
+    <line x1="92" x2="612" y1="96" y2="96" stroke="#7d99c34d" stroke-dasharray="4 6"/>
+      <text class="cost-axis" x="77" y="96" dominant-baseline="middle" text-anchor="end">$800</text><line x1="92" x2="612" y1="140.5" y2="140.5" stroke="#7d99c34d" stroke-dasharray="4 6"/>
+      <text class="cost-axis" x="77" y="140.5" dominant-baseline="middle" text-anchor="end">$600</text><line x1="92" x2="612" y1="185" y2="185" stroke="#7d99c34d" stroke-dasharray="4 6"/>
+      <text class="cost-axis" x="77" y="185" dominant-baseline="middle" text-anchor="end">$400</text><line x1="92" x2="612" y1="229.5" y2="229.5" stroke="#7d99c34d" stroke-dasharray="4 6"/>
+      <text class="cost-axis" x="77" y="229.5" dominant-baseline="middle" text-anchor="end">$200</text><line x1="92" x2="612" y1="274" y2="274" stroke="#879ebc" stroke-dasharray="none"/>
+      <text class="cost-axis" x="77" y="274" dominant-baseline="middle" text-anchor="end">$0</text>
+    <g text-anchor="middle" style="--monthly-scale:0.8249;--annual-scale:0.791904;--delay:0ms;--monthly-offset:-146.8322px;--annual-offset:-140.958912px">
+      <g class="cost-scale">
+        <rect class="cost-face" x="122.66666666666669" y="96" width="112" height="178" rx="8" fill="#6d87af"/>
+      </g>
+      <g class="cost-offset">
+        <text class="cost-amount" x="178.66666666666669" y="263" fill="#c3d1e7">$659.92</text>
+      </g>
+      <text class="cost-sku" x="178.66666666666669" y="307">D16d_v5</text>
+      <text class="cost-config" x="178.66666666666669" y="333" fill="#c3d1e7">Intel baseline</text>
+    </g><g text-anchor="middle" style="--monthly-scale:0.41245;--annual-scale:0.395952;--delay:110ms;--monthly-offset:-73.4161px;--annual-offset:-70.479456px">
+      <g class="cost-scale">
+        <rect class="cost-face" x="296" y="96" width="112" height="178" rx="8" fill="#528ad1"/>
+      </g>
+      <g class="cost-offset">
+        <text class="cost-amount" x="352" y="263" fill="#b4d6fc">$329.96</text>
+      </g>
+      <text class="cost-sku" x="352" y="307">D8d_v5</text>
+      <text class="cost-config" x="352" y="333" fill="#b4d6fc">Intel · 50% less</text>
+    </g><g text-anchor="middle" style="--monthly-scale:0.37595;--annual-scale:0.360912;--delay:220ms;--monthly-offset:-66.9191px;--annual-offset:-64.24233600000001px">
+      <g class="cost-scale">
+        <rect class="cost-face" x="469.33333333333337" y="96" width="112" height="178" rx="8" fill="#be935b"/>
+      </g>
+      <g class="cost-offset">
+        <text class="cost-amount" x="525.3333333333334" y="263" fill="#f2d3a1">$300.76</text>
+      </g>
+      <text class="cost-sku" x="525.3333333333334" y="307">D8ads_v5</text>
+      <text class="cost-config" x="525.3333333333334" y="333" fill="#f2d3a1">AMD · 54.4% less</text>
+    </g>
+    <text x="30" y="367" font-size="18" fill="#b7c8df">July 2025 estimate · East US Linux · 730 h/mo</text>
+  </svg>
