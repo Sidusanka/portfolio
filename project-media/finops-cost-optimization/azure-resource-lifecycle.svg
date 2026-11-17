@@ -11,16 +11,22 @@
   .finops-cost-chart .cost-axis, .finops-cost-chart .cost-sku {
     font-family: var(--mono, ui-monospace, monospace);
   }
-  .finops-cost-chart .cost-axis { fill: #a1acc8; font-size: 19px; }
-  .finops-cost-chart .cost-sku { font-size: 24px; font-weight: 550; }
-  .finops-cost-chart .cost-config { fill: #aeb9d1; font-size: 21px; }
+  .finops-cost-chart .cost-axis { fill: #a1acc8; font-size: 15px; }
+  .finops-cost-chart .cost-sku { font-size: 18px; font-weight: 550; }
+  .finops-cost-chart .cost-config { fill: #aeb9d1; font-size: 16px; }
   .finops-cost-chart .cost-amount {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 650;
     paint-order: stroke fill;
     stroke: #18172d;
     stroke-linejoin: round;
-    stroke-width: 5px;
+    stroke-width: 4px;
+  }
+  @media (max-width: 540px) {
+    .finops-cost-chart:not([data-standalone]) .cost-axis { font-size: 18px; }
+    .finops-cost-chart:not([data-standalone]) .cost-sku { font-size: 21px; }
+    .finops-cost-chart:not([data-standalone]) .cost-config { font-size: 19px; }
+    .finops-cost-chart:not([data-standalone]) .cost-amount { font-size: 23px; }
   }
   .finops-cost-chart .cost-track { fill: #8494e209; stroke: #8290c856; }
   .finops-cost-chart .annual-only, .finops-cost-chart[data-period="annual"] .monthly-only { display: none; }
@@ -59,7 +65,7 @@
   </linearGradient><linearGradient id="cost-fill-2" x2="0" y2="100%">
     <stop stop-color="#6adac7" stop-opacity=".82"/><stop offset="1" stop-color="#245d68" stop-opacity=".9"/>
   </linearGradient></defs>
-    <text x="30" y="48" font-size="26" font-weight="650">Monthly AKS compute cost</text>
+    <text x="30" y="48" font-size="21" font-weight="650">Monthly AKS compute cost</text>
     <line x1="92" x2="612" y1="96" y2="96" stroke="#414564"/>
       <text class="cost-axis" x="77" y="96" dominant-baseline="middle" text-anchor="end">$800</text><line x1="92" x2="612" y1="140.5" y2="140.5" stroke="#414564"/>
       <text class="cost-axis" x="77" y="140.5" dominant-baseline="middle" text-anchor="end">$600</text><line x1="92" x2="612" y1="185" y2="185" stroke="#414564"/>
@@ -82,7 +88,7 @@
         <text class="cost-amount" x="178.66666666666669" y="259">$659.92</text>
       </g>
       <text class="cost-sku" x="178.66666666666669" y="307">D16d_v5</text>
-      <text class="cost-config" x="178.66666666666669" y="332">Intel baseline</text>
+      <text class="cost-config" x="178.66666666666669" y="329">Intel baseline</text>
     </g><g text-anchor="middle" style="--monthly-scale:0.41245;--annual-scale:0.395952;--delay:110ms;--monthly-offset:-73.4161px;--annual-offset:-70.479456px">
       <g class="cost-track">
         <path d="M315.5 96 l9 -6 h64 l-9 6 Z"/><path d="M379.5 96 l9 -6 v178 l-9 6 Z"/>
@@ -99,7 +105,7 @@
         <text class="cost-amount" x="352" y="259">$329.96</text>
       </g>
       <text class="cost-sku" x="352" y="307">D8d_v5</text>
-      <text class="cost-config" x="352" y="332">Intel</text>
+      <text class="cost-config" x="352" y="329">Intel</text>
     </g><g text-anchor="middle" style="--monthly-scale:0.37595;--annual-scale:0.360912;--delay:220ms;--monthly-offset:-66.9191px;--annual-offset:-64.24233600000001px">
       <g class="cost-track">
         <path d="M488.83333333333337 96 l9 -6 h64 l-9 6 Z"/><path d="M552.8333333333334 96 l9 -6 v178 l-9 6 Z"/>
@@ -116,7 +122,7 @@
         <text class="cost-amount" x="525.3333333333334" y="259">$300.76</text>
       </g>
       <text class="cost-sku" x="525.3333333333334" y="307">D8ads_v5</text>
-      <text class="cost-config" x="525.3333333333334" y="332">AMD</text>
+      <text class="cost-config" x="525.3333333333334" y="329">AMD</text>
     </g>
-    <text x="30" y="367" font-size="18" fill="#aeb9d1">USD per node · East US Linux · July 2025 estimate</text>
+    <text x="30" y="367" font-size="16" fill="#aeb9d1">USD per node · East US Linux · July 2025 estimate</text>
   </svg>
