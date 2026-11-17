@@ -3,18 +3,26 @@
   .finops-cost-chart {
     font-family: var(--body-font, system-ui, sans-serif);
     font-variant-numeric: tabular-nums;
-    fill: #f0f5ff;
+    fill: #e4e8f5;
   }
   .finops-cost-chart[data-standalone] {
-    background: #152235;
+    background: #18172d;
   }
   .finops-cost-chart .cost-axis, .finops-cost-chart .cost-sku {
     font-family: var(--mono, ui-monospace, monospace);
   }
-  .finops-cost-chart .cost-axis { fill: #b7c8df; font-size: 20px; }
-  .finops-cost-chart .cost-sku { font-size: 25px; font-weight: 650; }
-  .finops-cost-chart .cost-config { font-size: 20px; }
-  .finops-cost-chart .cost-amount { font-size: 27px; font-weight: 700; }
+  .finops-cost-chart .cost-axis { fill: #a1acc8; font-size: 19px; }
+  .finops-cost-chart .cost-sku { font-size: 24px; font-weight: 550; }
+  .finops-cost-chart .cost-config { fill: #aeb9d1; font-size: 21px; }
+  .finops-cost-chart .cost-amount {
+    font-size: 26px;
+    font-weight: 650;
+    paint-order: stroke fill;
+    stroke: #18172d;
+    stroke-linejoin: round;
+    stroke-width: 5px;
+  }
+  .finops-cost-chart .cost-track { fill: #8494e209; stroke: #8290c856; }
   .finops-cost-chart .annual-only, .finops-cost-chart[data-period="annual"] .monthly-only { display: none; }
   .finops-cost-chart[data-period="annual"] .annual-only { display: inline; }
   .finops-cost-chart .cost-scale {
@@ -29,9 +37,9 @@
     transition: transform .55s cubic-bezier(.2, .7, .25, 1);
   }
   .finops-cost-chart[data-period="annual"] .cost-offset { transform: translateY(var(--annual-offset)); }
-  .finops-cost-chart .cost-face { transform-box: fill-box; transform-origin: center bottom; }
+  .finops-cost-chart .cost-prism { transform-box: fill-box; transform-origin: center bottom; }
   @media (prefers-reduced-motion: no-preference) {
-    .finops-cost-chart[data-animate] .cost-face {
+    .finops-cost-chart[data-animate] .cost-prism {
       animation: finops-bar-rise .78s cubic-bezier(.2, .7, .2, 1) var(--delay) both;
     }
     .finops-cost-chart[data-animate] .cost-amount {
@@ -44,40 +52,71 @@
   @keyframes finops-bar-rise { from { transform: scaleY(.02); opacity: .45; } }
   @keyframes finops-cost-fade { from { opacity: 0; } }
 </style>
-    <text x="30" y="48" font-size="27" font-weight="700">Monthly cost per AKS node</text>
-    <line x1="92" x2="612" y1="96" y2="96" stroke="#7d99c34d" stroke-dasharray="4 6"/>
-      <text class="cost-axis" x="77" y="96" dominant-baseline="middle" text-anchor="end">$800</text><line x1="92" x2="612" y1="140.5" y2="140.5" stroke="#7d99c34d" stroke-dasharray="4 6"/>
-      <text class="cost-axis" x="77" y="140.5" dominant-baseline="middle" text-anchor="end">$600</text><line x1="92" x2="612" y1="185" y2="185" stroke="#7d99c34d" stroke-dasharray="4 6"/>
-      <text class="cost-axis" x="77" y="185" dominant-baseline="middle" text-anchor="end">$400</text><line x1="92" x2="612" y1="229.5" y2="229.5" stroke="#7d99c34d" stroke-dasharray="4 6"/>
-      <text class="cost-axis" x="77" y="229.5" dominant-baseline="middle" text-anchor="end">$200</text><line x1="92" x2="612" y1="274" y2="274" stroke="#879ebc" stroke-dasharray="none"/>
+    <defs><linearGradient id="cost-fill-0" x2="0" y2="100%">
+    <stop stop-color="#8a91d6" stop-opacity=".82"/><stop offset="1" stop-color="#43476e" stop-opacity=".9"/>
+  </linearGradient><linearGradient id="cost-fill-1" x2="0" y2="100%">
+    <stop stop-color="#64b9e6" stop-opacity=".82"/><stop offset="1" stop-color="#315482" stop-opacity=".9"/>
+  </linearGradient><linearGradient id="cost-fill-2" x2="0" y2="100%">
+    <stop stop-color="#6adac7" stop-opacity=".82"/><stop offset="1" stop-color="#245d68" stop-opacity=".9"/>
+  </linearGradient></defs>
+    <text x="30" y="48" font-size="26" font-weight="650">Monthly AKS compute cost</text>
+    <line x1="92" x2="612" y1="96" y2="96" stroke="#414564"/>
+      <text class="cost-axis" x="77" y="96" dominant-baseline="middle" text-anchor="end">$800</text><line x1="92" x2="612" y1="140.5" y2="140.5" stroke="#414564"/>
+      <text class="cost-axis" x="77" y="140.5" dominant-baseline="middle" text-anchor="end">$600</text><line x1="92" x2="612" y1="185" y2="185" stroke="#414564"/>
+      <text class="cost-axis" x="77" y="185" dominant-baseline="middle" text-anchor="end">$400</text><line x1="92" x2="612" y1="229.5" y2="229.5" stroke="#414564"/>
+      <text class="cost-axis" x="77" y="229.5" dominant-baseline="middle" text-anchor="end">$200</text><line x1="92" x2="612" y1="274" y2="274" stroke="#6d769b"/>
       <text class="cost-axis" x="77" y="274" dominant-baseline="middle" text-anchor="end">$0</text>
     <g text-anchor="middle" style="--monthly-scale:0.8249;--annual-scale:0.791904;--delay:0ms;--monthly-offset:-146.8322px;--annual-offset:-140.958912px">
+      <g class="cost-track">
+        <path d="M142.16666666666669 96 l9 -6 h64 l-9 6 Z"/><path d="M206.16666666666669 96 l9 -6 v178 l-9 6 Z"/>
+        <rect x="142.16666666666669" y="96" width="64" height="178"/>
+      </g>
       <g class="cost-scale">
-        <rect class="cost-face" x="122.66666666666669" y="96" width="112" height="178" rx="8" fill="#6d87af"/>
+        <g class="cost-prism">
+          <path d="M206.16666666666669 96 l9 -6 v178 l-9 6 Z" fill="#8a91d6" fill-opacity=".42"/>
+          <rect x="142.16666666666669" y="96" width="64" height="178" fill="url(#cost-fill-0)" stroke="#8a91d6" stroke-opacity=".48"/>
+          <path d="M142.16666666666669 96 l9 -6 h64 l-9 6 Z" fill="#8a91d6"/>
+        </g>
       </g>
       <g class="cost-offset">
-        <text class="cost-amount" x="178.66666666666669" y="263" fill="#c3d1e7">$659.92</text>
+        <text class="cost-amount" x="178.66666666666669" y="259">$659.92</text>
       </g>
       <text class="cost-sku" x="178.66666666666669" y="307">D16d_v5</text>
-      <text class="cost-config" x="178.66666666666669" y="333" fill="#c3d1e7">Intel baseline</text>
+      <text class="cost-config" x="178.66666666666669" y="332">Intel baseline</text>
     </g><g text-anchor="middle" style="--monthly-scale:0.41245;--annual-scale:0.395952;--delay:110ms;--monthly-offset:-73.4161px;--annual-offset:-70.479456px">
+      <g class="cost-track">
+        <path d="M315.5 96 l9 -6 h64 l-9 6 Z"/><path d="M379.5 96 l9 -6 v178 l-9 6 Z"/>
+        <rect x="315.5" y="96" width="64" height="178"/>
+      </g>
       <g class="cost-scale">
-        <rect class="cost-face" x="296" y="96" width="112" height="178" rx="8" fill="#528ad1"/>
+        <g class="cost-prism">
+          <path d="M379.5 96 l9 -6 v178 l-9 6 Z" fill="#64b9e6" fill-opacity=".42"/>
+          <rect x="315.5" y="96" width="64" height="178" fill="url(#cost-fill-1)" stroke="#64b9e6" stroke-opacity=".48"/>
+          <path d="M315.5 96 l9 -6 h64 l-9 6 Z" fill="#64b9e6"/>
+        </g>
       </g>
       <g class="cost-offset">
-        <text class="cost-amount" x="352" y="263" fill="#b4d6fc">$329.96</text>
+        <text class="cost-amount" x="352" y="259">$329.96</text>
       </g>
       <text class="cost-sku" x="352" y="307">D8d_v5</text>
-      <text class="cost-config" x="352" y="333" fill="#b4d6fc">Intel · 50% less</text>
+      <text class="cost-config" x="352" y="332">Intel</text>
     </g><g text-anchor="middle" style="--monthly-scale:0.37595;--annual-scale:0.360912;--delay:220ms;--monthly-offset:-66.9191px;--annual-offset:-64.24233600000001px">
+      <g class="cost-track">
+        <path d="M488.83333333333337 96 l9 -6 h64 l-9 6 Z"/><path d="M552.8333333333334 96 l9 -6 v178 l-9 6 Z"/>
+        <rect x="488.83333333333337" y="96" width="64" height="178"/>
+      </g>
       <g class="cost-scale">
-        <rect class="cost-face" x="469.33333333333337" y="96" width="112" height="178" rx="8" fill="#be935b"/>
+        <g class="cost-prism">
+          <path d="M552.8333333333334 96 l9 -6 v178 l-9 6 Z" fill="#6adac7" fill-opacity=".42"/>
+          <rect x="488.83333333333337" y="96" width="64" height="178" fill="url(#cost-fill-2)" stroke="#6adac7" stroke-opacity=".48"/>
+          <path d="M488.83333333333337 96 l9 -6 h64 l-9 6 Z" fill="#6adac7"/>
+        </g>
       </g>
       <g class="cost-offset">
-        <text class="cost-amount" x="525.3333333333334" y="263" fill="#f2d3a1">$300.76</text>
+        <text class="cost-amount" x="525.3333333333334" y="259">$300.76</text>
       </g>
       <text class="cost-sku" x="525.3333333333334" y="307">D8ads_v5</text>
-      <text class="cost-config" x="525.3333333333334" y="333" fill="#f2d3a1">AMD · 54.4% less</text>
+      <text class="cost-config" x="525.3333333333334" y="332">AMD</text>
     </g>
-    <text x="30" y="367" font-size="18" fill="#b7c8df">July 2025 estimate · East US Linux · 730 h/mo</text>
+    <text x="30" y="367" font-size="18" fill="#aeb9d1">USD per node · East US Linux · July 2025 estimate</text>
   </svg>
